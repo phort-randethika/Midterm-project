@@ -18,7 +18,6 @@ let state = {
   checkoutStep: 1,
   checkoutDetails: {}
 };
-
 // Target elements
 const viewContainer = document.getElementById('app-view-container');
 const desktopSearch = document.getElementById('desktop-search');
@@ -33,7 +32,6 @@ const globalModalContent = document.getElementById('global-modal-content');
 
 // Initialize Application
 document.addEventListener('DOMContentLoaded', () => {
-  applyTheme(state.theme);
   updateBadges();
   setupSearch();
   setupCountdownTimer();
@@ -181,24 +179,17 @@ function renderView() {
 // ----------------------------------------------------
 // THEME & CORE UTILITIES
 // ----------------------------------------------------
-function toggleTheme() {
-  state.theme = state.theme === 'dark' ? 'light' : 'dark';
-  localStorage.setItem('neo_theme', state.theme);
-  applyTheme(state.theme);
-  showToast(`Switched to ${state.theme === 'dark' ? 'Dark Mode' : 'Light Mode'}`, 'info');
-}
 
 function applyTheme(theme) {
   const html = document.documentElement;
-  const icon = document.getElementById('theme-icon');
 
   if (theme === 'dark') {
     html.className = 'dark';
-    document.body.className = "bg-darkbg text-slate-200 dark:bg-darkbg dark:text-slate-200 min-h-screen flex flex-col transition-colors duration-300";
+    document.body.className = "bg-darkbg text-slate-200 min-h-screen flex flex-col transition-colors duration-300";
     if (icon) icon.className = 'fa-solid fa-moon';
   } else {
     html.className = 'light';
-    document.body.className = "bg-lightbg text-slate-800 light:bg-lightbg light:text-slate-800 min-h-screen flex flex-col transition-colors duration-300";
+    document.body.className = "bg-lightbg text-slate-800 min-h-screen flex flex-col transition-colors duration-300";
     if (icon) icon.className = 'fa-solid fa-sun text-amber-500';
   }
 }

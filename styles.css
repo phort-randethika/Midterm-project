@@ -6,6 +6,10 @@
   --font-display: 'Outfit', sans-serif;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   font-family: var(--font-sans);
   scroll-behavior: smooth;
@@ -29,23 +33,11 @@ h6 {
   border: 1px solid rgba(255, 255, 255, 0.075);
 }
 
-.light .glass-panel {
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
 .glass-card {
   background: rgba(15, 23, 42, 0.45);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.light .glass-card {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .glass-card:hover {
